@@ -54,5 +54,17 @@ $navbar-breakpoint: 480px !default;
 }
 
 .card {
-  width: 350px;
+  width: 100%;
+}
+
+.card-cart {
+  display: flex;
+}
+
+.card-image {
+  width: 50%;
+}
+
+.media {
+  display: block;
 }
