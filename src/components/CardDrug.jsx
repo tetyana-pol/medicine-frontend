@@ -3,7 +3,7 @@ import { CartContext } from "../components/CartContext";
 
 export const CardDrug = ({ card }) => {
   const { title, description } = card;
-  const { setCart } = useContext(CartContext);
+  const { cart, setCart } = useContext(CartContext);
 
   return (
     <div className="card">
@@ -27,7 +27,16 @@ export const CardDrug = ({ card }) => {
           className="button is-primary"
           type="button"
           onClick={() => {
-            setCart((prev) => [...prev, { ...card, count: 1 }]);
+            const itemInCart = cart.find((el) => el.id === card.id);
+            if (itemInCart) {
+              setCart((prev) =>
+                prev.map((el) =>
+                  el.id === card.id ? { ...el, count: el.count + 1 } : el
+                )
+              );
+            } else {
+              setCart((prev) => [...prev, { ...card, count: 1 }]);
+            }
           }}
         >
           Add to cart

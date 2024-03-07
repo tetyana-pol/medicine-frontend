@@ -21,16 +21,11 @@ export const CartPage = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const data = new FormData();
-    data.append("name", formData.name);
-    data.append("email", formData.email);
-    data.append("phone", formData.phone);
-    data.append("adress", formData.adress);
-    for (let item of cart) {
-      data.set("idDrug", item.id);
-      data.set("count", item.count);
-      await addOrder(data);
-    }
+
+    await addOrder({
+      ...formData,
+      drugs: cart.map((item) => ({ idDrug: item.id, count: item.count })),
+    });
 
     setFormData((prevData) => ({
       ...prevData,

@@ -7,7 +7,7 @@ export const CardCart = ({ card }) => {
   const { setCart } = useContext(CartContext);
 
   return (
-    <div className="card ">
+    <div className="card card-cart">
       <div className="card-image">
         <figure className="image is-4by3">
           <img
