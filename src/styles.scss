@@ -28,13 +28,13 @@ $navbar-breakpoint: 480px !default;
 
 .companies {
   width: 30%;
-  border: black 1px solid;
+  border: gray 1px solid;
   border-radius: 5px;
-  margin: 5px;
+  padding: 5px;
 }
 
 .card-company {
-  border: black 1px solid;
+  border: gray 1px solid;
   margin-bottom: 5px;
 }
 
@@ -44,12 +44,12 @@ $navbar-breakpoint: 480px !default;
 
 .drugs {
   width: 60%;
-  margin: 5px;
+  padding: 5px;
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
   flex-wrap: wrap;
-  border: black 1px solid;
+  border: gray 1px solid;
   border-radius: 5px;
 }
 
@@ -67,4 +67,11 @@ $navbar-breakpoint: 480px !default;
 
 .media {
   display: block;
+}
+
+.user {
+  width: 30%;
+  border: gray 1px solid;
+  border-radius: 5px;
+  padding: 5px;
 }
