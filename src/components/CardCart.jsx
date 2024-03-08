@@ -3,7 +3,7 @@ import { CartContext } from "../components/CartContext";
 
 export const CardCart = ({ card }) => {
   const [count, setCount] = useState(card.count);
-  const { title, price } = card;
+  const { title, price, img } = card;
   const { setCart } = useContext(CartContext);
 
   return (
@@ -11,7 +11,7 @@ export const CardCart = ({ card }) => {
       <div className="card-image">
         <figure className="image is-4by3">
           <img
-            src="https://bulma.io/images/placeholders/1280x960.png"
+            src={`${process.env.REACT_APP_API_URL}/drug/image/${img}`}
             alt="Placeholder image"
           />
         </figure>
